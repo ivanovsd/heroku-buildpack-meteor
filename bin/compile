@@ -11,20 +11,22 @@ PATH=$METEOR_HOME/usr/bin:$METEOR_HOME/usr/lib/meteor/bin:$PATH
 METEOR_VERSION=0.9.4
 
 fetch_meteor() {
-  if [ -f "$METEOR_HOME/usr/bin/meteor" ] ; then
+#  if [ -f "$METEOR_HOME/usr/bin/meteor" ] ; then
     # Skip if meteor is already fetched
-    return
-  fi
+#    return
+#  fi
 
 
-  PACKAGE=meteor_${METEOR_VERSION}-1_amd64.deb
+#  PACKAGE=meteor_${METEOR_VERSION}-1_amd64.deb
 
   echo "Fetching meteor deb package"
-  curl -o "$CACHE_DIR/$PACKAGE" "http://d3sqy0vbqsdhku.cloudfront.net/${PACKAGE}"
+#  curl -o "$CACHE_DIR/$PACKAGE" "http://d3sqy0vbqsdhku.cloudfront.net/${PACKAGE}"
+  
+  curl https://install.meteor.com/ | sh
 
-  echo "Unpacking meteor"
-  [ ! -d "$METEOR_HOME" ] && mkdir -p "$METEOR_HOME"
-  ar p "$CACHE_DIR/$PACKAGE" data.tar.gz | tar -C "$METEOR_HOME" -zxf -
+#  echo "Unpacking meteor"
+#  [ ! -d "$METEOR_HOME" ] && mkdir -p "$METEOR_HOME"
+#  ar p "$CACHE_DIR/$PACKAGE" data.tar.gz | tar -C "$METEOR_HOME" -zxf -
 }
 
 build() {
