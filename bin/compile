@@ -12,7 +12,8 @@ BUILDPACK_DIR=$(cd -P -- "$(dirname -- "$0")" && cd .. && pwd -P)
 # Get the directory our app is checked out in (the "BUILD_DIR"), passed by Heroku
 APP_CHECKOUT_DIR=$1
 # Where we will install meteor. Has to be outside the APP_CHECKOUT_DIR.
-METEOR_DIR=`mktemp -d "$BUILDPACK_DIR"/meteor-XXXX`
+# METEOR_DIR=`mktemp -d "$BUILDPACK_DIR"/meteor-0.9.4`
+METEOR_DIR="$BUILDPACK_DIR/meteor-0.9.4"
 # Where we'll put things we compile.
 COMPILE_DIR_SUFFIX=".meteor/heroku_build"
 COMPILE_DIR="$APP_CHECKOUT_DIR"/"$COMPILE_DIR_SUFFIX"
