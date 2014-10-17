@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "meteor"
+# No-op
 exit 0
