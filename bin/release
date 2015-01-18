@@ -4,7 +4,7 @@
 cat <<EOF
 ---
 addons:
-  - mongohq:sandbox
+  - mongolab:sandbox
 config_vars:
   PATH: bin:.meteor/heroku_build/bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/app/vendor/phantomjs/bin
   LD_LIBRARY_PATH: /usr/local/lib:/usr/lib:/lib:/app/vendor/phantomjs/lib
